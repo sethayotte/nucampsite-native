@@ -75,9 +75,7 @@ function RenderComments({ comments }) {
           startingValue={item.rating}
           imageSize={10}
           style={{ alignItems: "flex-start", paddingVertical: "5%" }}
-        >
-          {item.rating} Stars
-        </Rating>
+        />
         <Text
           style={{ fontSize: 12 }}
         >{`-- ${item.author}, ${item.date}`}</Text>
@@ -112,7 +110,7 @@ class CampsiteInfo extends Component {
   }
 
   handleComment(campsiteId, rating, author, text) {
-    postComment(campsiteId, rating, author, text);
+    this.props.postComment(campsiteId, rating, author, text);
     this.toggleModal();
   }
 
